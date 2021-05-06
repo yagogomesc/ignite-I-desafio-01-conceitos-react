@@ -14,6 +14,7 @@ export function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTaskTitle, setNewTaskTitle] = useState("");
 
+  // Função para gerar um "id unico" tentando conferir se dentro das tasks existentes já possui id igual, se houver gera um novo id com Math, senão utiliza o id já gerado.
   function generateUniqueId() {
     const id = Math.floor(Math.random() * 1000000);
     const uniqueId = tasks.find((task) => task?.id === id);
